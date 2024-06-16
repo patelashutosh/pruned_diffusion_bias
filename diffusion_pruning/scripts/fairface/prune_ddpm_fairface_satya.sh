@@ -1,0 +1,9 @@
+python ddpm_prune.py \
+--dataset /raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64 \
+--model_path "theunnecessarythings/ddpm-ema-fairface-64" \
+--save_path run/pruned/ddpm_fairface_pruned_64_random_125_custom_satya \
+--pruning_ratio 0.2 \
+--batch_size 64 \
+--pruner taylor \
+--thr 0.05 \
+--device cuda:6 \

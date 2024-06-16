@@ -1,0 +1,19 @@
+python ddpm_train_ff.py \
+  --dataset="/raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64" \
+  --model_path="run/pruned/ddpm_fairface_pruned_64_dp_125_custom" \
+  --pruned_model_ckpt="run/pruned/ddpm_fairface_pruned_64_dp_125_custom/pruned/unet_pruned.pth" \
+  --resolution=64 \
+  --output_dir="run/finetuned/ddpm_fairface_pruned_post_training_custom_4lsteps" \
+  --train_batch_size=64 \
+  --num_iters=200000 \
+  --gradient_accumulation_steps=2 \
+  --learning_rate=0.0001 \
+  --lr_warmup_steps=100 \
+  --save_model_steps 1000 \
+  --dataloader_num_workers 8 \
+  --adam_weight_decay 1e-06 \
+  --adam_beta1 0.95 \
+  --ema_max_decay 0.9999 \
+  --dropout 0.01 \
+  --lr_scheduler cosine \
+  --use_ema \

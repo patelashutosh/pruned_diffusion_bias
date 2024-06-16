@@ -1,0 +1,11 @@
+python finetune_gpu.py \
+--config celeba.yml \
+--timesteps 100 \
+--eta 0 \
+--ni \
+--exp run/pretrain_final/celeba_trained \
+--doc training \
+--skip_type uniform  \
+--use_ema \
+--restore_from "pretrained/celeba_ddpm_ckpt.pth" \
+--device cuda:2 \

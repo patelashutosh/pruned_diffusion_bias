@@ -1,0 +1,1 @@
+python ddpm_sample.py --output_dir run/sample/ddpm_fairface_pretrained --batch_size 128 --model_path "theunnecessarythings/ddpm-ema-fairface-64"

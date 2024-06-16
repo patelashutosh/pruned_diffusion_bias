@@ -1,0 +1,70 @@
+(fairFace) akshay@dgx1-1:~/satyabrat/fairFace_GitRepo$ python3 predict10.py --csv DiffCsv/25files/train10.csv
+screen -r 3805710
+python3 predict_sample_finetuned.py --csv DiffCsv/sample_finetuned.csv
+
+python3 predict_sample_finetuned_50.py --csv DiffCsv/sample_finetuned_50.csv
+
+(fairFace) akshay@dgx1-1:~/satyabrat/fairFace_GitRepo/FairFace$ cp ~/ashutosh/dlib/sample_dataset.csv DiffCsv/
+(fairFace) akshay@dgx1-1:~/satyabrat/fairFace_GitRepo/FairFace$ cp ~/ashutosh/dlib/predict_sample_dataset.py .
+
+
+cp ~/ashutosh/dlib/predict_full_dataset.py .
+/raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64/train_64.orig/
+
+python3 predict_full_dataset.py --image_dir /raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64/train_64.orig/
+
+ python3 predict_full_dataset.py --image_dir /raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64/train_64.orig/ --output_csv /raid/akshay/ashutosh/dlib/output_full_dataset.csv
+
+cp ~/ashutosh/dlib/predict_fairface_no_dlib.py .
+
+python3 predict_fairface_no_dlib.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pretrained/process_0 --output_csv /raid/akshay/ashutosh/dlib/output_full_pretrained.csv
+
+
+python3 predict_fairface_no_dlib.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_finetuned_custom3_4l_64_dp_125/process_0/ --output_csv /raid/akshay/ashutosh/dlib/output_full_pruned125.csv
+
+python3 predict_fairface_no_dlib.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_finetuned_50/process_0/ --output_csv /raid/akshay/ashutosh/dlib/output_full_pruned50.csv
+
+-----
+(fairFace) akshay@dgx1-1:~/ashutosh/FairFace$ python predict_fairface_conf.py --image_dir test/ --detected_faces_dir detected_test --output_csv test_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64/train_64.orig/ --detected_faces_dir detected_fairface_dataset --output_csv fairface_dataset_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pretrained_300k/process_0 --detected_faces_dir detected_fairface_pretrained --output_csv fairface_pretrained_outputs_conf.csv
+
+scp cs21mds14014@192.168.209.59:/raid/cs21mds14014/ashutosh/FairFace/fairface_dataset_outputs_conf.csv .
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_25_150k/process_0/ --detected_faces_dir detected_fairface_finetuned_dp_25 --output_csv fairface_finetuned_dp_25_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_50_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_dp_50_200k --output_csv fairface_finetuned_dp_50_200k_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pretrained_300k_s2/process_0/ --detected_faces_dir detected_fairface_pretrained_2 --output_csv fairface_finetuned_pretrained_2_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_75_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_dp_75_200k --output_csv fairface_finetuned_dp_75_200k_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_rand_50_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_rand_50_200k --output_csv fairface_finetuned_rand_50_200k_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_875_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_dp_875_200k --output_csv fairface_finetuned_dp_875_200k_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_rand_75_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_rand_75_200k --output_csv fairface_finetuned_rand_75_200k_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_l1norm_50_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_l1norm_50_200k --output_csv fairface_finetuned_l1norm_50_200k_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_l1norm_75_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_l1norm_75_200k --output_csv fairface_finetuned_l1norm_75_200k_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_l1norm_25_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_l1norm_25_200k --output_csv fairface_finetuned_l1norm_25_200k_outputs_conf.csv
+
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_rand_25_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_rand_25_200k --output_csv fairface_finetuned_rand_25_200k_outputs_conf.csv
+
+python predict_fairface_conf2.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_l1norm_875_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_l1norm_875_200k --output_csv fairface_finetuned_l1norm_875_200k_outputs_conf.csv
+
+python predict_fairface_conf3.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_rand_875_200k/process_0/ --detected_faces_dir detected_fairface_finetuned_rand_875_200k --output_csv fairface_finetuned_rand_875_200k_outputs_conf.csv
+
+python predict_fairface_conf.py --image_dir /raid/akshay/ashutosh/Diff-Pruning/run/sample/ddpm_fairface_pruned_finetuned_my_25_200k_2/process_0/ --detected_faces_dir detected_fairface_finetuned_dp_25_200k_2 --output_csv fairface_finetuned_dp_75_200k_outputs_conf_2.csv
+

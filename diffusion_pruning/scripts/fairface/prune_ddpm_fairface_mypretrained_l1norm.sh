@@ -1,0 +1,10 @@
+python ddpm_prune_own.py \
+--dataset /raid/akshay/satyabrat/fairface-img-margin025-trainval/fairface_dataset_64 \
+--pretrained_model_ckpt run/finetuned/ddpm_fairface_pretrained/pruned/unet_ema_pruned.pth \
+--model_path run/finetuned/ddpm_fairface_pretrained \
+--save_path run/pruned/ddpm_fairface_my_pruned_64_l1norm_$1 \
+--pruning_ratio $1 \
+--batch_size 64 \
+--pruner l1norm \
+--thr 0.05 \
+--device cuda:4 \

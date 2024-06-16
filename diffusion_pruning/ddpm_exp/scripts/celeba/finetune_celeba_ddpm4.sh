@@ -1,0 +1,11 @@
+python finetune_gpu.py \
+--config celeba.yml \
+--timesteps 100 \
+--eta 0 \
+--ni \
+--exp run/finetune_final/celeba_$1_finetuned \
+--doc post_training \
+--skip_type uniform  \
+--use_ema \
+--load_pruned_model "run/pruned_final/celeba_$1.pth" \
+--device cuda:4 \
